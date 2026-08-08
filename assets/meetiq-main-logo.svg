@@ -1,0 +1,25 @@
+<svg width="760" height="220" viewBox="0 0 760 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="220" rx="36" fill="white"/>
+  <g transform="translate(48 46)">
+    <rect width="128" height="128" rx="30" fill="url(#bg)"/>
+    <path d="M33 45C33 35.611 40.611 28 50 28H78C87.389 28 95 35.611 95 45V69C95 78.389 87.389 86 78 86H67.5L49 103.5C45.748 106.577 40.4 104.271 40.4 99.794V86H50C40.611 86 33 78.389 33 69V45Z" fill="white"/>
+    <path d="M47 73V47.5C47 44.951 50.179 43.795 51.813 45.751L64 60.4L76.187 45.751C77.821 43.795 81 44.951 81 47.5V73" stroke="url(#mark)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M107 44H96M108 82H96" stroke="#C4B5FD" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="108" cy="44" r="5" fill="#7DD3FC"/>
+    <circle cx="108" cy="82" r="5" fill="#A78BFA"/>
+  </g>
+  <text x="208" y="116" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="70" font-weight="800" letter-spacing="0">MeetIQ</text>
+  <text x="212" y="154" fill="#667085" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600">AI meeting intelligence for modern teams</text>
+  <defs>
+    <linearGradient id="bg" x1="18" y1="14" x2="110" y2="114" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#312E81"/>
+      <stop offset="0.52" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="47" y1="44" x2="81" y2="74" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#312E81"/>
+      <stop offset="0.55" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MeetIQ | AI Meeting Notes Summarizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#app" aria-label="MeetIQ home">
+        <img class="brand-icon" src="assets/meetiq-icon.svg" alt="" />
+        <span>MeetIQ</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#problem">Problem</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#how-it-works">How It Works</a>
+      </nav>
+      <div class="topbar-actions">
+        <div class="theme-toggle" aria-label="Website color mode">
+          <button class="theme-option active" type="button" data-theme-option="light">Light</button>
+          <button class="theme-option" type="button" data-theme-option="dark">Dark</button>
+        </div>
+        <a class="nav-cta" href="#app">Try Free</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="app">
+        <div class="hero-copy">
+          <p class="eyebrow">AI meeting intelligence</p>
+          <h1>Your Meetings, Instantly Organized.</h1>
+          <p>
+            Turn messy meetings into clear decisions and actionable tasks.
+            MeetIQ extracts summaries, owners, deadlines, and next steps without
+            inventing missing details.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#summarizer">Summarize Notes</a>
+            <a class="secondary-link" href="#how-it-works">How It Works</a>
+          </div>
+          <div class="trust-row" aria-label="Target audience">
+            <span>Startups</span>
+            <span>Remote teams</span>
+            <span>Managers</span>
+            <span>Students</span>
+          </div>
+        </div>
+
+        <div class="product-shell" id="summarizer" aria-label="MeetIQ summarizer dashboard">
+          <aside class="sidebar" aria-label="Workspace navigation">
+            <div class="sidebar-title">Workspace</div>
+            <a class="sidebar-item active" href="#summarizer" data-sidebar-link>
+              <span class="sidebar-dot"></span>
+              Meetings
+            </a>
+            <a class="sidebar-item" href="#actions">
+              <span class="sidebar-dot"></span>
+              Action Items
+            </a>
+            <a class="sidebar-item" href="#decisions">
+              <span class="sidebar-dot"></span>
+              Decisions
+            </a>
+            <a class="sidebar-item" href="#deadlines">
+              <span class="sidebar-dot"></span>
+              Deadlines
+            </a>
+            <a class="sidebar-item" href="#questions">
+              <span class="sidebar-dot"></span>
+              Questions
+            </a>
+          </aside>
+
+          <section class="tool-panel input-panel">
+            <div class="panel-header">
+              <div>
+                <p class="panel-kicker">Meeting input</p>
+                <h2>Raw Notes</h2>
+                <p>Paste transcript fragments, rough bullets, or client call notes.</p>
+              </div>
+              <button class="icon-button" id="clearBtn" type="button" aria-label="Clear notes">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M3 6h18" />
+                  <path d="M8 6V4h8v2" />
+                  <path d="m19 6-1 14H6L5 6" />
+                  <path d="M10 11v5" />
+                  <path d="M14 11v5" />
+                </svg>
+              </button>
+            </div>
+
+            <textarea
+              id="notesInput"
+              spellcheck="true"
+              placeholder="Paste messy notes here. Example: Sarah will send the revised deck by Friday. We decided to launch the pilot next week..."
+            ></textarea>
+
+            <div class="toolbar">
+              <div class="tone-control" aria-label="Summary detail level">
+                <button class="tone-option active" type="button" data-tone="brief">Brief</button>
+                <button class="tone-option" type="button" data-tone="balanced">Balanced</button>
+                <button class="tone-option" type="button" data-tone="detailed">Detailed</button>
+              </div>
+              <button class="primary-button" id="summarizeBtn" type="button">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M4 19.5V4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5Z" />
+                  <path d="M8 7h8" />
+                  <path d="M8 11h8" />
+                  <path d="M8 15h5" />
+                </svg>
+                Analyze Notes
+              </button>
+            </div>
+          </section>
+
+          <section class="tool-panel output-panel">
+            <div class="panel-header">
+              <div>
+                <p class="panel-kicker">Structured output</p>
+                <h2>Meeting Intelligence</h2>
+                <p>Professional recap with missing details marked as Not specified.</p>
+              </div>
+              <button class="icon-button" id="copyBtn" type="button" aria-label="Copy summary">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <rect x="9" y="9" width="13" height="13" rx="2" />
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="stats-strip" aria-label="Summary statistics">
+              <div>
+                <span id="wordCount">0</span>
+                <small>words</small>
+              </div>
+              <div>
+                <span id="actionCount">0</span>
+                <small>actions</small>
+              </div>
+              <div>
+                <span id="decisionCount">0</span>
+                <small>decisions</small>
+              </div>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="Summary sections">
+              <button class="tab active" type="button" data-tab="summary">Summary</button>
+            <button class="tab" type="button" data-tab="actions">Actions</button>
+              <button class="tab" type="button" data-tab="decisions">Decisions</button>
+              <button class="tab" type="button" data-tab="deadlines">Deadlines</button>
+              <button class="tab" type="button" data-tab="questions">Questions</button>
+            </div>
+
+            <section class="result-section active" id="summary" aria-live="polite">
+              <div class="empty-state">
+                <h3>Your meeting recap will appear here</h3>
+                <p>Paste notes, choose the detail level, then analyze.</p>
+              </div>
+            </section>
+            <section class="result-section" id="actions" aria-live="polite"></section>
+            <section class="result-section" id="decisions" aria-live="polite"></section>
+            <section class="result-section" id="deadlines" aria-live="polite"></section>
+            <section class="result-section" id="questions" aria-live="polite"></section>
+          </section>
+        </div>
+      </section>
+
+      <section class="section problem-section" id="problem">
+        <div class="section-heading">
+          <p class="eyebrow">Core problem</p>
+          <h2>Meetings Create Work. Notes Create Chaos.</h2>
+          <p>
+            Teams lose track of decisions, deadlines, and responsibilities when
+            meeting notes are unorganized, incomplete, or scattered across tools.
+          </p>
+        </div>
+        <div class="problem-grid">
+          <article>
+            <h3>Messy Notes</h3>
+            <p>Raw notes are inconsistent, hard to revisit, and often mixed with side discussion.</p>
+          </article>
+          <article>
+            <h3>Missed Action Items</h3>
+            <p>Tasks, follow-ups, and responsibilities disappear after the meeting ends.</p>
+          </article>
+          <article>
+            <h3>Lost Decisions</h3>
+            <p>Important decisions get buried inside long conversations and chat threads.</p>
+          </article>
+          <article>
+            <h3>Communication Gaps</h3>
+            <p>Remote teams lose alignment when recaps are unclear or never sent.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="section-heading">
+          <p class="eyebrow">Features</p>
+          <h2>Everything Your Team Needs After Every Meeting</h2>
+          <p>Practical AI workflows for summaries, actions, and decisions.</p>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <span class="feature-number">01</span>
+            <h3>AI Meeting Summarization</h3>
+            <p>Converts raw notes into concise summaries, key discussion points, and important context.</p>
+          </article>
+          <article>
+            <span class="feature-number">02</span>
+            <h3>Smart Action Extraction</h3>
+            <p>Identifies tasks, assigned owners, priorities, and deadlines from the source notes.</p>
+          </article>
+          <article>
+            <span class="feature-number">03</span>
+            <h3>Decision Tracking</h3>
+            <p>Captures approved ideas, finalized decisions, and agreed next steps in one clean record.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-section" id="how-it-works">
+        <div class="section-heading align-left">
+          <p class="eyebrow">How it works</p>
+          <h2>Paste. Analyze. Organize.</h2>
+          <p>
+            MeetIQ turns rough notes into structured output instantly, while
+            marking unclear owners and dates as Not specified.
+          </p>
+        </div>
+        <div class="steps">
+          <article>
+            <span>1</span>
+            <h3>Paste meeting notes</h3>
+            <p>Add raw notes from calls, standups, planning sessions, or class projects.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>AI analyzes content</h3>
+            <p>Important points, responsibilities, commitments, deadlines, and decisions are detected.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Receive structured output</h3>
+            <p>Copy a professional recap your team can actually act on.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section testimonials-section">
+        <div class="section-heading">
+          <p class="eyebrow">Testimonials</p>
+          <h2>Teams Save Hours Every Week</h2>
+          <p>Built for people who need clear follow-through after every conversation.</p>
+        </div>
+        <div class="testimonial-grid">
+          <blockquote>
+            <p>"MeetIQ reduced our post-meeting admin work by 80%."</p>
+            <cite>Operations lead, B2B startup</cite>
+          </blockquote>
+          <blockquote>
+            <p>"The action item extraction makes every client call easier to close."</p>
+            <cite>Agency founder</cite>
+          </blockquote>
+          <blockquote>
+            <p>"We finally have a searchable record of what was actually decided."</p>
+            <cite>Product manager</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="section documentation-section" id="documentation">
+        <div class="section-heading">
+          <p class="eyebrow">Documentation</p>
+          <h2>Build, Use, and Scale MeetIQ</h2>
+          <p>
+            Practical product documentation for using the summarizer, reviewing
+            AI output, and preparing the app for a real SaaS launch.
+          </p>
+        </div>
+        <div class="documentation-grid">
+          <article>
+            <h3>Getting Started</h3>
+            <p>
+              Paste raw meeting notes, choose the summary detail level, then
+              analyze the notes to generate a structured recap.
+            </p>
+            <ul>
+              <li>Use raw bullets, transcripts, or rough call notes.</li>
+              <li>Review unclear fields marked as Not specified.</li>
+              <li>Copy the final recap for Slack, email, or project tools.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Output Rules</h3>
+            <p>
+              MeetIQ should extract only information present in the notes and
+              avoid inventing owners, tasks, dates, or decisions.
+            </p>
+            <ul>
+              <li>Missing owner: Owner is Not specified.</li>
+              <li>Missing deadline: Deadline is Not specified.</li>
+              <li>Ambiguous decision: keep it under questions or risks.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>AI Integration Guide</h3>
+            <p>
+              Connect the Analyze Notes action to an AI API and request
+              structured JSON for summaries, decisions, deadlines, and tasks.
+            </p>
+            <ul>
+              <li>Validate JSON before rendering it in the UI.</li>
+              <li>Store the original source text with each extracted item.</li>
+              <li>Use confidence labels for uncertain extractions.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section pricing-section" id="pricing">
+        <div class="section-heading">
+          <p class="eyebrow">Pricing preview</p>
+          <h2>Simple Pricing for Every Team</h2>
+          <p>Start free, then scale as meeting volume grows.</p>
+        </div>
+        <div class="pricing-grid">
+          <article>
+            <h3>Free</h3>
+            <strong>₹0</strong>
+            <p>Limited summaries each month for students and solo users.</p>
+          </article>
+          <article class="featured-plan">
+            <h3>Pro</h3>
+            <strong>₹999</strong>
+            <p>Unlimited meetings, AI exports, saved history, and integrations.</p>
+          </article>
+          <article>
+            <h3>Team</h3>
+            <strong>₹2,499</strong>
+            <p>Shared workspace, team action tracking, and admin controls.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section bonus-section">
+        <div class="section-heading">
+          <p class="eyebrow">Future roadmap</p>
+          <h2>Built to Grow Beyond Notes</h2>
+          <p>MeetIQ can expand into a complete meeting intelligence workspace.</p>
+        </div>
+        <div class="bonus-grid">
+          <article>
+            <h3>AI Enhancements</h3>
+            <p>Voice transcription, sentiment analysis, risk detection, auto-priority, and follow-up emails.</p>
+          </article>
+          <article>
+            <h3>Integrations</h3>
+            <p>Google Meet, Zoom, Microsoft Teams, Slack, Notion, Jira, Trello, and ClickUp.</p>
+          </article>
+          <article>
+            <h3>Monetization</h3>
+            <p>Free plan limits, Pro subscriptions, Team collaboration, and enterprise admin features.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <h2>Stop Rewriting Meeting Notes Manually.</h2>
+        <p>
+          MeetIQ helps modern teams transform chaotic meeting notes into
+          structured summaries, decisions, and action items using AI.
+        </p>
+        <a class="primary-link" href="#summarizer">Get Started Free</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <section class="footer-brand">
+          <a class="brand footer-logo" href="#app" aria-label="MeetIQ home">
+            <img class="brand-icon" src="assets/meetiq-icon.svg" alt="" />
+            <span>MeetIQ</span>
+          </a>
+          <p>
+            AI-powered meeting intelligence that turns messy notes into clear
+            summaries, decisions, owners, and deadlines.
+          </p>
+          <span class="ai-badge">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 2v4" />
+              <path d="M12 18v4" />
+              <path d="M4.93 4.93l2.83 2.83" />
+              <path d="M16.24 16.24l2.83 2.83" />
+              <path d="M2 12h4" />
+              <path d="M18 12h4" />
+              <path d="M4.93 19.07l2.83-2.83" />
+              <path d="M16.24 7.76l2.83-2.83" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            Powered by AI
+          </span>
+        </section>
+
+        <nav class="footer-column" aria-label="Footer product links">
+          <h3>Product</h3>
+          <a href="#summarizer">Summarizer</a>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#pricing">Pricing</a>
+        </nav>
+
+        <nav class="footer-column" aria-label="Footer resource links">
+          <h3>Resources</h3>
+          <a href="#documentation">Documentation</a>
+          <a href="#problem">Use Cases</a>
+          <a href="#actions">Action Items</a>
+          <a href="#documentation">AI Guide</a>
+        </nav>
+
+        <section class="footer-contact">
+          <h3>Stay in the loop</h3>
+          <p>Product updates, AI workflow tips, and launch notes.</p>
+          <span class="contact-name">Contact: Srikar Pandiri</span>
+          <a class="footer-email" href="mailto:srikarpandiri10@gmail.com">srikarpandiri10@gmail.com</a>
+          <div class="social-links" aria-label="Social links">
+            <a href="mailto:srikarpandiri10@gmail.com" aria-label="Email">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/srikarpandiri/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M6 9v10" />
+                <path d="M6 5v.01" />
+                <path d="M11 19v-5.5a3.5 3.5 0 0 1 7 0V19" />
+                <path d="M11 9v10" />
+              </svg>
+            </a>
+            <a
+              href="https://github.com/SrikarPandiri/MeetIQ"
+              aria-label="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4" />
+                <path d="M9 18c-4.51 2-5-2-7-2" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 MeetIQ. Built for Srikar Pandiri.</p>
+        <div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Status Page</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

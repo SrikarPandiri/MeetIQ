@@ -1,0 +1,21 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="120" fill="url(#bg)"/>
+  <path d="M132 178C132 148.177 156.177 124 186 124H326C355.823 124 380 148.177 380 178V264C380 293.823 355.823 318 326 318H269.5L209.5 374C199.743 383.107 184 376.188 184 362.842V318H186C156.177 318 132 293.823 132 264V178Z" fill="white"/>
+  <path d="M178 268V181.5C178 174.596 186.613 171.467 191.039 176.764L256 254.5L320.961 176.764C325.387 171.467 334 174.596 334 181.5V268" stroke="url(#mark)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M232 312H280" stroke="#A78BFA" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="350" cy="158" r="15" fill="#7DD3FC"/>
+  <circle cx="358" cy="279" r="10" fill="#A78BFA"/>
+  <path d="M350 158H318M358 279H322" stroke="#C4B5FD" stroke-width="8" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bg" x1="72" y1="56" x2="438" y2="456" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#312E81"/>
+      <stop offset="0.52" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="178" y1="174" x2="334" y2="276" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#312E81"/>
+      <stop offset="0.5" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+</svg>

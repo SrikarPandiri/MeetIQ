@@ -1,0 +1,26 @@
+<svg width="900" height="180" viewBox="0 0 900 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(34 34)">
+    <rect width="112" height="112" rx="26" fill="url(#bg)"/>
+    <path d="M29 40C29 31.716 35.716 25 44 25H68C76.284 25 83 31.716 83 40V61C83 69.284 76.284 76 68 76H59.5L43.5 91.2C40.593 93.962 35.8 91.902 35.8 87.895V76H44C35.716 76 29 69.284 29 61V40Z" fill="white"/>
+    <path d="M41 64V42.5C41 40.028 44.085 38.907 45.669 40.805L56 53.2L66.331 40.805C67.915 38.907 71 40.028 71 42.5V64" stroke="url(#mark)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M95 39H84M95 72H84" stroke="#C4B5FD" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="96" cy="39" r="5" fill="#7DD3FC"/>
+    <circle cx="96" cy="72" r="5" fill="#A78BFA"/>
+  </g>
+  <text x="178" y="102" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800" letter-spacing="0">MeetIQ</text>
+  <path d="M403 54V126" stroke="#E4E7EC" stroke-width="2"/>
+  <text x="432" y="85" fill="#475467" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Turn messy meetings into clear decisions</text>
+  <text x="432" y="116" fill="#667085" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="500">AI summaries, tasks, owners, and deadlines</text>
+  <defs>
+    <linearGradient id="bg" x1="16" y1="12" x2="98" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#312E81"/>
+      <stop offset="0.52" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="41" y1="40" x2="71" y2="65" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#312E81"/>
+      <stop offset="0.55" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+</svg>

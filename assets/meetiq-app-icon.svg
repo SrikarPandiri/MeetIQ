@@ -1,0 +1,26 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" rx="228" fill="url(#bg)"/>
+  <rect x="128" y="128" width="768" height="768" rx="184" fill="url(#shine)" opacity="0.32"/>
+  <path d="M264 356C264 296.353 312.353 248 372 248H652C711.647 248 760 296.353 760 356V528C760 587.647 711.647 636 652 636H539L419 748C399.486 766.214 368 752.376 368 725.684V636H372C312.353 636 264 587.647 264 528V356Z" fill="white"/>
+  <path d="M356 536V363C356 349.191 373.226 342.934 382.078 353.528L512 509L641.922 353.528C650.774 342.934 668 349.191 668 363V536" stroke="url(#mark)" stroke-width="60" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M464 624H560" stroke="#A78BFA" stroke-width="32" stroke-linecap="round"/>
+  <circle cx="700" cy="316" r="30" fill="#7DD3FC"/>
+  <circle cx="716" cy="558" r="20" fill="#A78BFA"/>
+  <path d="M700 316H636M716 558H644" stroke="#C4B5FD" stroke-width="16" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bg" x1="144" y1="112" x2="876" y2="912" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#312E81"/>
+      <stop offset="0.5" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="234" y1="174" x2="832" y2="824" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="356" y1="348" x2="668" y2="552" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#312E81"/>
+      <stop offset="0.5" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+</svg>
